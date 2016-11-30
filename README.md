@@ -1,5 +1,4 @@
-odiobill/vsftpd
-===============
+Based on original work / fork from odiobill/vsftpd
 
 Very light **vsftpd** installation based on *Debian*.
 
@@ -7,11 +6,11 @@ By design, it will only run the **vsftpd** executable, exposing the FTP standard
 
 You can execute it with something like:
 
-    docker run -d -P --name vsftpd --volumes-from YOUR-WEB-SERVER odiobill/vsftpd
+    docker run -d -P --name vsftpd --volumes-from YOUR-WEB-SERVER hkarhani/vsftpd
 
 To to add any user, you may want to run another (temporary) container that imports its volumes. Run it with:
 
-    docker run -i -t --name config.vsftpd --volumes-from vsftpd odiobill/vsftpd bash
+    docker run -i -t --name config.vsftpd --volumes-from vsftpd hkarhani/vsftpd bash
 
 Then you can use the *useradd* system command to define them and having the same accounts also on the main **vsftpd** container.
 
